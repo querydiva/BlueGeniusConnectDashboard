@@ -41,7 +41,8 @@ const Footer = (props) => {
                     
         </div>
         <div>
-        <img src={connect} alt="logo" 
+        <img  style={{marginTop:"5px"}}
+        src={connect} alt="logo" 
                     className="Blue-Genius-logo"/>
         </div>
         </div>

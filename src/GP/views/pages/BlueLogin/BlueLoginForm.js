@@ -76,7 +76,8 @@ class BlueLoginForm extends React.Component {
                     <InputGroup className="input-group-focus">
                                                 <InputGroupAddon addonType="prepend">
                                               <InputGroupText>
-                                                  <i className="tim-icons icon-lock-circle"/>
+                                                  <i className="tim
+                                                  -icons icon-lock-circle"/>
                                                 </InputGroupText>
                                           </InputGroupAddon>
                                              <Input
