@@ -38,16 +38,13 @@ const BlueAuthNavbar = (props) => {
         <Navbar
             className={classnames("navbar-absolute fixed-top ", color)}
             expand="lg"
-            
-        >
+                    >
             <Container fluid>
-              
                 <div className="navbar-wrapper">
                     <img src={Logo} alt="logo" 
                     className="white_logo"/>
                 </div>
-               
-            
+                          
                 <button
                     aria-controls="navigation-index"
                     aria-expanded={false}
