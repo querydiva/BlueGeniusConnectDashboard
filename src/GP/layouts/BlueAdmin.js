@@ -94,7 +94,7 @@ const BlueAdmin = (props) =>{
         return getRoutes(prop.views);
       }
       if (prop.layout === "/blueadmin") {
-          console.log(`Generating route: ${prop.layout + prop.path}`); // Log route creation
+         
         return (
 
           <Route path={prop.path } element={prop.element} key={key} />
