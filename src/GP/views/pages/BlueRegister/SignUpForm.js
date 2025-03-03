@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Form, Input, InputGroup, InputGroupAddon, InputGroupText} from "reactstrap";
+import {Button, Form, Input, InputGroup, InputGroupText} from "reactstrap";
 import "../../../../assets/css/facility.css"
 
 import Alerts from "../BlueRegister/Alert";
@@ -73,15 +73,15 @@ class SignUpForm extends React.Component {
 
     render() {
         return (
-            <div style={{marginTop: "-40px"}}>
+            <div style={{marginTop: "0px"}}>
                 <Alerts className="alerts" message={this.state.alertMessage}/>
                 <Form className="form" onSubmit={this.handleSubmit}>
                     <InputGroup className="input-group-focus">
-                        <InputGroupAddon addonType="prepend">
+                        <InputGroupText addonType="prepend">
                             <InputGroupText>
                                 <i className="tim-icons icon-single-02"/>
                             </InputGroupText>
-                        </InputGroupAddon>
+                        </InputGroupText>
                         <Input
                             placeholder="UserName"
                             name="username"
@@ -91,11 +91,11 @@ class SignUpForm extends React.Component {
                         />
                     </InputGroup>
                     <InputGroup className="input-group-focus">
-                        <InputGroupAddon addonType="prepend">
+                        <InputGroupText addonType="prepend">
                             <InputGroupText>
                                 <i className="tim-icons icon-email-85"/>
                             </InputGroupText>
-                        </InputGroupAddon>
+                        </InputGroupText>
                         <Input
                             placeholder="E-Mail"
                             name="email"
@@ -106,11 +106,11 @@ class SignUpForm extends React.Component {
                     </InputGroup>
 
                     <InputGroup className="input-group-focus">
-                        <InputGroupAddon addonType="prepend">
+                        <InputGroupText addonType="prepend">
                             <InputGroupText>
                                 <i className="tim-icons icon-lock-circle"/>
                             </InputGroupText>
-                        </InputGroupAddon>
+                        </InputGroupText>
                         <Input
                             name="password"
                             type="password"
@@ -122,11 +122,11 @@ class SignUpForm extends React.Component {
                     </InputGroup>
 
                     <InputGroup className="input-group-focus">
-                        <InputGroupAddon addonType="prepend">
+                        <InputGroupText addonType="prepend">
                             <InputGroupText>
                                 <i className="tim-icons icon-lock-circle"/>
                             </InputGroupText>
-                        </InputGroupAddon>
+                        </InputGroupText>
                         <Input
                             name="passwordVerify"
                             placeholder="Verify Password"

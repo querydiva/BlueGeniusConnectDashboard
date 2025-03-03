@@ -5,8 +5,10 @@ import PerfectScrollbar  from "perfect-scrollbar";
 import NotificationAlert from "react-notification-alert";
 import Blueroutes from "../../GP/routes/Blueroutes";
 
-import logo from "assets/img/react-logo.png";
-import logo1 from "assets/img/logoBlueBig.png"
+import ConnectLogo from "assets/img/connectwhite.png";
+import BGIconLogo from "../../assets/img/BG_logo.png"
+import BlueGeniusLogo from "assets/img/BlueGeniusWhite.png"
+import BlueGiant from "../../assets/img/BlueGiantWhite.png"
 import BlueFixedPlugin from "GP/components/BlueFixedPlugin/BlueFixedPlugin";
 import BlueAdminNavbar from "GP/components/BlueNavbars/BlueAdminNavbar";
 import BlueSidebar from "GP/components/BlueSidebars/BlueSidebar";
@@ -182,8 +184,9 @@ const BlueAdmin = (props) =>{
         activeColor={activeColor}
         logo={{
           outterLink: "https://www.bluegiant.com/",
-          text: "Blue Giant",
-          imgSrc: logo,
+          text: BlueGeniusLogo,
+          imgSrc: ConnectLogo,
+          imgSrc1:BGIconLogo,
         }}
         closeSidebar={closeSidebar}
       />
@@ -199,8 +202,8 @@ const BlueAdmin = (props) =>{
           activeColor={activeColor}// Pass activeColor as a prop
           logo={{
             outterLink: "https://www.bluegiant.com/",
-            text: "Blue Geinus",
-            imgSrc: logo1,
+            text: "Blue Geinus ",
+            imgSrc: BlueGiant,
           }}
         />
         <Routes>

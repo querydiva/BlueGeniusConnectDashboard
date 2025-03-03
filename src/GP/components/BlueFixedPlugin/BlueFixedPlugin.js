@@ -1,7 +1,7 @@
 
 import React from "react";
 
-import { Button, CustomInput } from "reactstrap";
+import { Button, Input } from "reactstrap";
 
 const BlueFixedPlugin= (props) => {
   const [classes, setClasses] = React.useState("dropdown");
@@ -94,7 +94,7 @@ const BlueFixedPlugin= (props) => {
           <li className="adjustments-line">
             <div className="togglebutton switch-sidebar-mini d-flex align-items-center justify-content-center">
               <span className="label-switch">OFF</span>
-              <CustomInput
+              <Input
                 type="switch"
                 id="switch-1"
                 onChange={props.handleMiniClick}
@@ -107,7 +107,7 @@ const BlueFixedPlugin= (props) => {
           <li className="adjustments-line">
             <div className="togglebutton switch-change-color mt-3 d-flex align-items-center justify-content-center">
               <span className="label-switch">LIGHT MODE</span>
-              <CustomInput
+              <Input
                 type="switch"
                 id="switch-2"
                 onChange={handleActiveMode}

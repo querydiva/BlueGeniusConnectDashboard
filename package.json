@@ -13,8 +13,10 @@
     "minify-sass": "sass src/assets/scss/black-dashboard-pro-react.scss src/assets/css/black-dashboard-pro-react.min.css --style compressed"
   },
   "dependencies": {
-    "@userfront/core": "^1.0.0",
+    "@userfront/core": "^1.1.1",
     "@userfront/react": "^2.0.0",
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0",
     "autoprefixer": "10.4.16",
     "axios": "^1.7.2",
     "bootstrap": "4.6.2",
@@ -36,18 +38,20 @@
     "react-jvectormap": "0.0.16",
     "react-notification-alert": "0.0.13",
     "react-router-dom": "6.21.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-select": "5.8.0",
     "react-table": "7.8.0",
-    "sass": "1.69.5"
+    "reactstrap": "^9.2.3",
+    "sass": "1.69.5",
+    "schema-utils": "^4.2.0",
+    "sweetalert2": "^11.14.5"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "7.21.11",
     "typescript": "5.3.3"
   },
   "optionalDependencies": {
-    "eslint-plugin-flowtype": "8.0.3",
-    "reactstrap": "8.10.1"
+    "eslint-plugin-flowtype": "8.0.3"
   },
   "eslintConfig": {
     "extends": "react-app"

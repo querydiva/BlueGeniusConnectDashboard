@@ -8,6 +8,7 @@ import PerfectScrollbar from "perfect-scrollbar";
 // reactstrap components
 import { Nav, Collapse } from "reactstrap";
 
+
 var ps;
 
 const BlueSidebar = (props) => {
@@ -143,49 +144,82 @@ const BlueSidebar = (props) => {
   const { activeColor, logo } = props;
   let logoImg = null;
   let logoText = null;
+  let logoImg1 =null;
   if (logo !== undefined) {
     if (logo.outterLink !== undefined) {
-      logoImg = (
+     
+      logoImg1 = (
         <a
           href={logo.outterLink}
           className="simple-text logo-mini"
-          target="_blank"
+          target=""
           onClick={props.closeSidebar}
         >
-          <div className="logo-img">
-            <img src={logo.imgSrc} alt="react-logo" />
+          <div className="logo-img ">
+            <img src={logo.imgSrc1} alt="blue-logo" />
           </div>
         </a>
       );
+
       logoText = (
         <a
           href={logo.outterLink}
           className="simple-text logo-normal"
-          target="_blank"
+          target=""
           onClick={props.closeSidebar}
         >
-          {logo.text}
+          <div className="logo-img logo-img1">
+        <img src={logo.text} alt="blue-logo" />
+      </div>
+          
         </a>
       );
-    } else {
       logoImg = (
+        <a
+          href={logo.outterLink}
+          className=" simple-text logo-normal "
+          target=""
+          onClick={props.closeSidebar}
+        >
+          <div className="logo-img logo-img2 ">
+            <img src={logo.imgSrc} alt="blue-logo" />
+          </div>
+        </a>
+      );
+      
+    } else {
+      logoImg1 = (
         <NavLink
           to={logo.innerLink}
           className="simple-text logo-mini"
           onClick={props.closeSidebar}
         >
           <div className="logo-img">
+            <img src={logo.imgSrc1} alt="react-logo" />
+          </div>
+        </NavLink>
+      );
+      logoImg = (
+        <NavLink
+          to={logo.innerLink}
+          className="i"
+          onClick={props.closeSidebar}
+        >
+          <div className="blue-white-logo-sidebar">
             <img src={logo.imgSrc} alt="react-logo" />
           </div>
         </NavLink>
       );
+    
       logoText = (
         <NavLink
           to={logo.innerLink}
-          className="simple-text logo-normal"
+          className="blue-white-logo-sidebar"
           onClick={props.closeSidebar}
         >
-          {logo.text}
+         <div className="blue-white-logo-sidebar">
+            <img src={logo.text} alt="react-logo" />
+          </div>
         </NavLink>
       );
     }
@@ -195,8 +229,10 @@ const BlueSidebar = (props) => {
       <div className="sidebar-wrapper" ref={sidebarRef}>
         {logoImg !== null || logoText !== null ? (
           <div className="logo">
+            {logoImg1}
+             {logoText}  
             {logoImg}
-            {logoText}
+         
           </div>
         ) : null}
         <Nav>{createLinks(props.routes)}</Nav>

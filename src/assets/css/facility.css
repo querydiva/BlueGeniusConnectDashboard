@@ -105,29 +105,32 @@ vertical-lane-boundary-dashes {
   /* width: 200px !important; */
   height: 120px !important;
   max-height: 130px !important;
+  
   /* max-width: 400px; */
   padding: 0!important;
-  border-top:none!important;
-  border-bottom: none!important;
+  /* border-top:none!important;
+  border-bottom: none!important; */
   /*transform: rotate(90deg);*/
   /*border-bottom:1px solid gold*/
+ 
+ 
+ 
 }
 
 .section-warehouse-cell td{
+  padding-top: 10px!important;
+   height:200px !important;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #204e8e!important;
+    border:4px solid #204e8e!important;
  
-  height:200px !important;
-  /* max-width: 40px; */
-  /* display: block; */
-  margin-left: auto;
-  margin-right: auto;
-text-align: center;
-}
-
-
+  }
 
 .road-background{
     background-color:  	#DCDCDC!important;
-}
+  }
 
 .symbols{
     margin: 5px 5px 10px 0!important;
@@ -206,3 +209,51 @@ text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }
   
+  /* Main container for the cell content */
+.colspan-content {
+  display: flex; /* Align children horizontally */
+  justify-content: space-between; /* Space between sections */
+  align-items: center; /* Vertically center content */
+  gap: 20px; /* Space between items */
+ 
+}
+
+/* Text sections */
+.text-section {
+  flex: 1; /* Equal space for text sections */
+  text-align: center;
+}
+
+.text-title {
+  color: #204e8e;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.text-description {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Image section */
+.image-section {
+  flex: 1; /* Ensure equal spacing */
+  text-align: center;
+}
+
+.section-image {
+  max-width: 100%; /* Ensure the image is responsive */
+  height: auto;
+  border-radius: 8px; /* Optional styling */
+}
+/* Add margin to the wrapper */
+.warehouse-section-wrapper {
+  margin-top: -10px; /* Space above the content */
+  margin-left: -5px;
+  height: 205px !important;
+  max-height: 250px !important;
+  border:2px solid #204e8e;
+  margin-bottom:-10px;
+}

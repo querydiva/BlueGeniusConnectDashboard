@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 import PropTypes from "prop-types";
-// reactstrap components
+import logo1 from "../../../assets/img/connectwhite.png"
+import "../../../assets/css/home.css"
+import { useAuth} from "GP/contexts/AuthContext";
+import { Link } from "react-router-dom";
+ 
 import {
   Button,
   Collapse,
+  NavItem,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
@@ -21,7 +26,18 @@ import {
   UncontrolledTooltip,
 } from "reactstrap";
 
+// Initialize Userfront Core JS
+
+import Userfront from "@userfront/core";
+// reactstrap components
+Userfront.init("pn46y6ny");
+
+
 const BlueAdminNavbar = (props) => {
+  //Initialize Userfront Core JS
+  const { username } = useAuth(); // Get the username from context
+// reactstrap components
+
   // State mgt manage the navabar state
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [modalSearch, setModalSearch] = React.useState(false);
@@ -31,12 +47,12 @@ const BlueAdminNavbar = (props) => {
   
   // this function opens and closes the collapse on small devices
   const toggleCollapse = () => {
-    // if (collapseOpen) {
-    //   setColor("navbar-transparent");
-    // } else {
-    //   setColor("bg-white");
-    // }
-    // setCollapseOpen(!collapseOpen);
+    if (collapseOpen) {
+      setColor("navbar-transparent");
+    } else {
+      setColor("bg-white");
+    }
+    setCollapseOpen(!collapseOpen);
   };
 
   // this function is to open the Search modal
@@ -55,9 +71,12 @@ const BlueAdminNavbar = (props) => {
           target="_blank"
           onClick={props.closeSidebar}
         >
-          <div className="logo-img">
-            <img src={logo.imgSrc} alt="react-logo" />
+          <div className="Blue-giant-white_logo">
+            <img src={logo.imgSrc} alt="blue-logo" />
+           
           </div>
+         
+        
         </a>
       );
       
@@ -69,7 +88,7 @@ const BlueAdminNavbar = (props) => {
           onClick={props.closeSidebar}
         >
           <div className="logo-img">
-            <img src={logo.imgSrc} alt="react-logo" />
+            <img src={logo.imgSrc} alt="blue-genius" />
           </div>
         </NavLink>
       );
@@ -154,80 +173,70 @@ const BlueAdminNavbar = (props) => {
           >
             {/* //Visual elements of the button representing the "kebab" (three
             vertical dots) icon. */}
-            <span className="navbar-toggler-bar navbar-kebab" />
-            <span className="navbar-toggler-bar navbar-kebab" />
-            <span className="navbar-toggler-bar navbar-kebab" />
+            <span style={{backgroundColor: "#ffffff"}}  className="navbar-toggler-bar navbar-kebab" />
+            <span style={{backgroundColor: "#ffffff"}} className="navbar-toggler-bar navbar-kebab" />
+            <span style={{backgroundColor: "#ffffff"}}  className="navbar-toggler-bar navbar-kebab" />
           </button>
           {/* //A collapsible navbar section from Reactstrap that is controlled by
           collapseOpen state. */}
-          <Collapse navbar isOpen={collapseOpen}>
-            {/* // A nav element aligned to the right. */}
-            <Nav className="ml-auto" navbar>
-              {/* // A search bar component. */}
-              <InputGroup className="search-bar" tag="li">
-                <Button
-                  color="link"
-                  data-target="#searchModal"
-                  data-toggle="modal"
-                  id="search-button"
-                  onClick={toggleModalSearch}
-                >
-                  {/* // An icon for the search button. */}
-                  <i className="tim-icons icon-zoom-split" />
-                  {/* // A text label for the button, visible on smaller screens. */}
-                  <span className="d-lg-none d-md-block">Search</span>
+        <Collapse navbar isOpen={collapseOpen}>
+                        <Nav className="ml-auto" navbar>
+
+                            <div className="search-bar nav-link" 
+                            style={{color: "#ffffff",fontFamily:"Poppins",}}>
+                                WELCOME, {username ? username.toUpperCase() : "USER"}
+                            </div>
+                           
+                            <NavItem className="search-bar">
+                                <Button onClick={Userfront.logout}  color="link"
+                                         style={{color: "#ffffff",
+                                         fontFamily:"Poppins",
+                                         fontSize:"14px", 
+                                         fontWeight:"normal"}}>
+                                   
+                                    <i className="tim-icons icon-button-power"
+                                       style={{color: "#ffffff",marginRight:'5px' ,
+                                        fontSize:"13px", marginTop:'-6px'}}/> 
+                                       SIGN OUT
+                                </Button>
+                            </NavItem>
+
+                             {/* Show Sign Up button only if the username is 'admin_blue' */}
+            {username === "admin_blue" && (
+              <NavItem className="search-bar">
+                <Link to = "/blueadmin/register">
+                
+                <Button color="link" style={{ color: "#ffffff", fontFamily: "Poppins",fontWeight:"normal" }}>
+                  <i className="tim-icons icon-single-02" style={{ color: "#ffffff", marginRight: "2px" , 
+                    fontSize:"14px", marginTop:'-6px' }} /> SIGN UP
                 </Button>
-              </InputGroup>
-              <UncontrolledDropdown nav>
-                <DropdownToggle
-                  caret
-                  color="default"
-                  data-toggle="dropdown"
-                  nav
-                  onClick={(e) => e.preventDefault()}
-                >
-                  <div className="photo">
-                    <img alt="..." src={require("assets/img/bill.jpg")} />
-                  </div>
-                  <b className="caret d-none d-lg-block d-xl-block" />
-                  <p className="d-lg-none">Log out</p>
-                </DropdownToggle>
-                <DropdownMenu className="dropdown-navbar" right tag="ul">
-                  <NavLink tag="li">
-                    <DropdownItem className="nav-item">Profile</DropdownItem>
-                  </NavLink>
-                  <NavLink tag="li">
-                    <DropdownItem className="nav-item">Settings</DropdownItem>
-                  </NavLink>
-                  <DropdownItem divider tag="li" />
-                  <NavLink tag="li">
-                    <DropdownItem className="nav-item">Log out</DropdownItem>
-                  </NavLink>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-              <li className="separator d-lg-none" />
-            </Nav>
-          </Collapse>
-        </Container>
-      </Navbar>
-      <Modal
-        modalClassName="modal-search"
-        isOpen={modalSearch}
-        toggle={toggleModalSearch}
-      >
-        <div className="modal-header">
-          <Input id="inlineFormInputGroup" placeholder="SEARCH" type="text" />
-          <button
-            aria-label="Close"
-            className="close"
-            data-dismiss="modal"
-            type="button"
-            onClick={toggleModalSearch}
-          >
-            <i className="tim-icons icon-simple-remove" />
-          </button>
-        </div>
-      </Modal>
+                </Link>
+              </NavItem>
+            )}
+                            <li className="separator d-lg-none"/>
+                        </Nav>
+                    </Collapse>
+                </Container>
+            </Navbar>
+            <Modal
+                modalClassName="modal-search"
+                isOpen={modalSearch}
+                toggle={toggleModalSearch}
+            >
+                <div className="modal-header">
+                    <Input id="inlineFormInputGroup"
+                           placeholder="Search" type="text"/>
+                    <button
+                        aria-label="Close"
+                        className="close"
+                        data-dismiss="modal"
+                        type="button"
+                        onClick={toggleModalSearch}
+                    >
+                        <i className="tim-icons icon-simple-remove"/>
+                    </button>
+                </div>
+            </Modal>
     </div>
   );
 };

@@ -63,7 +63,7 @@ const BlueYardView = (props) => {
 
   return (
     <>
-      <Row>
+      <Row >
         <Card>
           <CardHeader>
             <CardTitle tag="h4">
@@ -138,14 +138,12 @@ const BlueYardView = (props) => {
       </Row>
       {/* // End of top cards */}
 
-      <Row>
+   <Row >
         <Card>
           <CardBody>
-            <Row >
+         <Row >
               <Col xs="12" md="12" lg="12">
-                <Table
-                  responsive
-                  >
+                <Table responsive >
                   {/*Render Truck Lanes*/}
                   <tbody>
                     <tr className="road-background">
@@ -199,21 +197,54 @@ const BlueYardView = (props) => {
                         </td>
                       ))}
                     </tr>
-                    <tr className="section-warehouse-cell ">
+
+                    <tr>
                       <td colspan="10">
-                        <div className="row-with-gif-background-warehouse">
-                          <span>
-                            Dry Goods
-                          </span>
+                        <div className="warehouse-section-wrapper">
+                          {/* <div className="row-with-gif-background-warehouse"> */}
+                          <div className="colspan-content">
+                            {/* First Text Section */}
+                            <div className="text-section">
+                              <span className="text-title">DRY GOODS</span>
+                              <p className="text-description">
+                                Storage for dry goods and non-perishable items.
+                              </p>
+                            </div>
+
+                            {/* Image Section */}
+                            <div className="image-section">
+                              <img
+                                src="https://via.placeholder.com/150"
+                                alt="Warehouse Section"
+                                className="section-image"
+                              />
+                            </div>
                           </div>
-                          </td>
+                        </div>
+                      </td>
                       <td colspan="5">
-                      <div className="row-with-gif-background-warehouse">
-                          <span>
-                          Frozen Goods
-                          </span>
+                        <div className="warehouse-section-wrapper">
+                          {/* <div className="row-with-gif-background-warehouse"> */}
+                          <div className="colspan-content">
+                            {/* First Text Section */}
+                            <div className="text-section">
+                              <span className="text-title">FROZEN  GOODS</span>
+                              <p className="text-description">
+                                Storage for Referigerated items.
+                              </p>
+                            </div>
+
+                            {/* Image Section */}
+                            <div className="image-section">
+                              <img
+                                src="https://via.placeholder.com/150"
+                                alt="Warehouse Section"
+                                className="section-image"
+                              />
+                            </div>
                           </div>
-                          </td>
+                        </div>
+                      </td>
                     </tr>
                   </tbody>
                 </Table>
@@ -221,15 +252,52 @@ const BlueYardView = (props) => {
                 <div>
                   <Table responsive>
                     <tbody>
-                    <tr className="road-background  section-warehouse-cell">
-                      <td colspan="5">
-                      <div className="parallax-row">
-                      <span>Liquid Goods</span></div></td>
+                      <td colspan="5"  >
+                        <div className="warehouse-section-wrapper">
+                          {/* <div className="parallax-row"> */}
+                          <div className="colspan-content">
+                            <div className="text-section">
+                              <span className="text-title">LIQUIDS GOODS</span>
+                              <p className="text-description">
+                                Storage for liquids items.
+                              </p>
+                            </div>
+
+                            {/* Image Section */}
+                            <div className="image-section">
+                              <img
+                                src="https://via.placeholder.com/150"
+                                alt="Warehouse Section"
+                                className="section-image"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </td>
                       <td colspan="10">
-                       <div className="parallax-row">
-                          <span>Goods</span></div></td>
-                    </tr>
-                      <tr style={{ height: "1vh" }}>
+                        <div className="warehouse-section-wrapper">
+                          {/* <div className="parallax-row"> */}
+                          <div className="colspan-content">
+                            <div className="text-section">
+                              <span className="text-title">FARZILE GOODS </span>
+                              <p className="text-description">
+                                Storage for Frazile items.
+                              </p>
+                            </div>
+
+                            {/* Image Section */}
+                            <div className="image-section">
+                              <img
+                                src="https://via.placeholder.com/150"
+                                alt="Warehouse Section"
+                                className="section-image"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <tr 
+                      style={{ height: "1vh" }}>
                         {southLanes.map((item, k) => (
                           <td
                             key={k}
