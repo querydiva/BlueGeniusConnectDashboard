@@ -4,6 +4,7 @@ import BlueYardLayoutContainer from "../views/Visuals/BlueYardLayout/BlueYardLay
 import Login from "../views/pages/BlueLogin/BlueLogin.js"
 import Register from "../views/pages/BlueRegister/BlueRegister.js"
 import BlueForgotPasswordPage from "GP/views/pages/BlueResetPassword/BlueForgotPasswordPage.js";
+import DockEquipmentContainer from "../views/Visuals/DockAssetEquipmentSummary/DockEquipmentContainer.js"
 
 
 const Blueroutes = [
@@ -11,6 +12,16 @@ const Blueroutes = [
     path: "/yardlayout",
     name: "Yard Layout",
     element: <BlueYardLayoutContainer/>,
+    layout: "/blueadmin",
+    rtlName: "تسجيل",
+    mini: "R",
+    rtlMini: "صع",
+    icon: "tim-icons icon-bus-front-12"
+  },
+  {
+    path: "/dockequipment",
+    name: "Dock/Asset Equipment Summary",
+    element: <DockEquipmentContainer/>,
     layout: "/blueadmin",
     rtlName: "تسجيل",
     mini: "R",
